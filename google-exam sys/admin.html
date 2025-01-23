@@ -8,10 +8,13 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url(images/pse1.jpg);
+            background-image: url('images/pse1.jpg');
             background-repeat: no-repeat;
             background-size: cover;
-            
+            background-position: center center; /* Keep the background image centered */
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            display: flex;
+            flex-direction: column;
         }
 
         .navbar {
@@ -54,7 +57,7 @@
             padding: 20px;
             text-align: center;
             border-top: 1px solid #ccc;
-            margin-top: 583px;
+            margin-top: auto;  /* Ensures footer stays at the bottom */
         }
 
         footer p {
@@ -73,6 +76,60 @@
         footer a:hover {
             color: #ff9800;
         }
+
+        /* Center the form without changing image position */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;  /* Ensure full screen height */
+            position: absolute;
+            top: 50%;  /* Vertically center the content */
+            left: 50%;  /* Horizontally center the content */
+            transform: translate(-50%, -50%);  /* Adjust position to truly center the content */
+            color: #fff;  /* White text for visibility */
+            text-align: center;
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .main-content form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-content label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .main-content input {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 250px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .main-content button {
+            padding: 10px 20px;
+            background-color: #601637;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .main-content button:hover {
+            background-color: #ff9800;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +144,8 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Centered form in the middle of the image -->
     <div class="main-content">
         <h2>Enter Passcode to Proceed</h2>
         <form action="admin.php" method="POST">
@@ -97,6 +156,7 @@
         </form>
     </div>
 
+    <!-- Footer with contact information stays at the bottom -->
     <footer>
         <p>Contact us: <a href="mailto:pvgs@example.com">pvgs@example.com</a> | Phone: +123 456 7890</p>
         <p>
